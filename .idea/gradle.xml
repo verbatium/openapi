@@ -13,6 +13,7 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/api" />
             <option value="$PROJECT_DIR$/client" />
+            <option value="$PROJECT_DIR$/generated" />
           </set>
         </option>
       </GradleProjectSettings>
