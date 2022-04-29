@@ -26,56 +26,6 @@ dependencies {
 
 }
 
-//sourceSets {
-//    generated{
-//        java.srcDir "${buildDir}/generated/src/main/java"
-//    }
-//    main {
-//        compileClasspath += generated.output
-//        runtimeClasspath += generated.output
-//    }
-//
-//    test {
-//        compileClasspath += generated.output
-//        runtimeClasspath += generated.output
-//    }
-//}
-//
-//openApiGenerate {
-//    // other settings omitted
-//    inputSpec = "${rootDir}/petstore.json"
-//
-//    outputDir = "${buildDir}/generated".toString()
-//    apiPackage = "com.codeborne.api"
-//    invokerPackage = "com.codeborne.invoker"
-//    modelPackage = "com.codeborne.model"
-//
-//    generatorName = "spring"
-//    globalProperties = [
-//            modelDocs: "true",
-////            models: "true",
-////            apis: "true"
-//
-//    ]
-
-//
-//
-//    configOptions = [
-//            annotationLibrary:"none"
-//    ]
-//}
-//
-//jar.dependsOn tasks.openApiGenerate
-
-//apply plugin: 'org.openapi.generator'
-
-//sourceSets {
-//    main {
-//        java {
-//            srcDir "$rootDir/api/src/main/java"
-//        }
-//    }
-//}
 // these dependencies are required for the generated code in order to build
 ext {
     swagger_annotations_version = "1.5.22"
@@ -94,32 +44,16 @@ sourceSets {
         }
     }
 }
-//idea {
-//    module {
-//        // Marks the already(!) added srcDir as "generated"
-//        generatedSourceDirs += "$buildDir/generated/src/main/java"
-//    }
-//}
 
 openApiGenerate {
-    globalProperties = [
-            modelDocs: "false",
-    ]
     generatorName = 'spring'
     validateSpec = true
     outputDir = "$buildDir/generated".toString()
-    inputSpec = "${rootDir}/petstore.json"
+    inputSpec = "${rootDir}/petstore.json".toString()
     invokerPackage = 'com.demo.gradle'
-    additionalProperties = [
-            documentationProvider: "springdoc",
-            oas3                   : "true",
-            interfaceOnly       : "true",
-            skipDefaultInterface: "true",
-            useSwaggerUI        : "true"
-    ]
+    apiPackage = 'com.demo.gradle.api'
     configOptions = [
-            documentationProvider: "springdoc",
-            oas3                   : 'true',
+            skipDefaultInterface   : 'true',
             interfaceOnly          : 'true',
             packageName            : 'com.demo.gradle',
             apiPackage             : 'com.demo.gradle.api',
@@ -127,6 +61,10 @@ openApiGenerate {
             configPackage          : 'com.demo.gradle.configuration',
             hideGenerationTimestamp: 'true'
     ]
+    globalProperties = [
+            modelDocs: "false",
+    ]
+
 }
 
 compileJava.dependsOn tasks.openApiGenerate
