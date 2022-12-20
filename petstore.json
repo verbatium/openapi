@@ -2,20 +2,20 @@
   "openapi": "3.0.0",
   "info": {
     "title": "Swagger Petstore - OpenAPI 3.0",
-    "description": "This is a sample Pet Store Server based on the OpenAPI 3.0 specification.  You can find out more about\nSwagger at [http://swagger.io](http://swagger.io). In the third iteration of the pet store, we've switched to the design first approach!\nYou can now help us improve the API whether it's by making changes to the definition itself or to the code.\nThat way, with time, we can improve the API in general, and expose some of the new features in OAS3.\n\nSome useful links:\n- [The Pet Store repository](https://github.com/swagger-api/swagger-petstore)\n- [The source API definition for the Pet Store](https://github.com/swagger-api/swagger-petstore/blob/master/src/main/resources/openapi.yaml)",
-    "termsOfService": "http://swagger.io/terms/",
+    "description": "This is a sample Pet Store Server based on the OpenAPI 3.0 specification.  You can find out more about\nSwagger at [https://swagger.io](https://swagger.io). In the third iteration of the pet store, we've switched to the design first approach!\nYou can now help us improve the API whether it's by making changes to the definition itself or to the code.\nThat way, with time, we can improve the API in general, and expose some of the new features in OAS3.\n\nSome useful links:\n- [The Pet Store repository](https://github.com/swagger-api/swagger-petstore)\n- [The source API definition for the Pet Store](https://github.com/swagger-api/swagger-petstore/blob/master/src/main/resources/openapi.yaml)",
+    "termsOfService": "https://swagger.io/terms/",
     "contact": {
       "email": "apiteam@swagger.io"
     },
     "license": {
       "name": "Apache 2.0",
-      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+      "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
     "version": "1.0.11"
   },
   "externalDocs": {
     "description": "Find out more about Swagger",
-    "url": "http://swagger.io"
+    "url": "https://swagger.io"
   },
   "servers": [
     {
@@ -28,7 +28,7 @@
       "description": "Everything about your Pets",
       "externalDocs": {
         "description": "Find out more",
-        "url": "http://swagger.io"
+        "url": "https://swagger.io"
       }
     },
     {
@@ -36,7 +36,7 @@
       "description": "Access to Petstore orders",
       "externalDocs": {
         "description": "Find out more about our store",
-        "url": "http://swagger.io"
+        "url": "https://swagger.io"
       }
     },
     {
@@ -620,7 +620,7 @@
           "store"
         ],
         "summary": "Delete purchase order by ID",
-        "description": "For valid response try integer IDs with value < 1000. Anything above 1000 or nonintegers will generate API errors",
+        "description": "For valid response try integer IDs with value < 1000. Anything above 1000 or non integers will generate API errors",
         "operationId": "deleteOrder",
         "parameters": [
           {
@@ -983,7 +983,7 @@
           },
           "username": {
             "type": "string",
-            "example": "fehguy"
+            "example": "some string"
           },
           "address": {
             "type": "array",
@@ -1005,7 +1005,7 @@
         "properties": {
           "street": {
             "type": "string",
-            "example": "437 Lytton"
+            "example": "437 Tallinn"
           },
           "city": {
             "type": "string",
@@ -1039,6 +1039,15 @@
         },
         "xml": {
           "name": "category"
+        }
+      },
+      "Test": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string",
+            "example": "message"
+          }
         }
       },
       "User": {
@@ -1113,7 +1122,7 @@
           },
           "name": {
             "type": "string",
-            "example": "doggie"
+            "example": "dog"
           },
           "category": {
             "$ref": "#/components/schemas/Category"

@@ -1,6 +1,6 @@
 buildscript {
     ext {
-        springBootVersion = '2.6.5'
+        springBootVersion = '2.7.6'
     }
 }
 
@@ -22,7 +22,7 @@ dependencies {
 }
 
 sourceSets {
-    generated{
+    generated {
         java.srcDir "${buildDir}/generated/src/main/java"
     }
     main {
@@ -36,34 +36,3 @@ sourceSets {
     }
 }
 
-//openApiGenerate {
-//    // other settings omitted
-//    inputSpec = "${rootDir}/petstore.json"
-//
-//    outputDir = "${projectDir}/generated".toString()
-//    apiPackage = "com.codeborne.api"
-//    invokerPackage = "com.codeborne.invoker"
-//    modelPackage = "com.codeborne.model"
-//
-//    generatorName = "spring"
-//    globalProperties = [
-//            modelDocs: "true",
-////            models: "true",
-////            apis: "true"
-//
-//    ]
-//    additionalProperties = [
-//            interfaceOnly:"true",
-//            skipDefaultInterface:"true",
-//            useSwaggerUI:"true"
-//    ]
-//
-//
-//    configOptions = [
-//            annotationLibrary:"none"
-//    ]
-//}
-
-//jar.dependsOn tasks.openApiGenerate
-
-apply plugin: 'org.openapi.generator'
